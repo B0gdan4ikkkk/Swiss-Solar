@@ -1,0 +1,1239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Стили для контента вакансий */
+.vacancy-content h2 {
+    @apply text-white text-[18px] md:text-[20px] font-medium uppercase mt-8 mb-4;
+}
+
+.vacancy-content h3 {
+    @apply text-white text-[16px] md:text-[18px] font-medium uppercase mt-6 mb-3;
+}
+
+.vacancy-content p {
+    @apply mb-4 text-[#757575];
+}
+
+.vacancy-content ul,
+.vacancy-content ol {
+    @apply list-disc list-inside space-y-2 ml-4 mb-4;
+}
+
+.vacancy-content li {
+    @apply text-[#757575];
+}
+
+.vacancy-content strong {
+    @apply text-white font-medium;
+}
+
+.vacancy-content a {
+    @apply text-[#EA0029] hover:underline transition-colors;
+}
+
+/* ClashDisplay Font Family */
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('../fonts/ClashDisplay-Extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('../fonts/ClashDisplay-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('../fonts/ClashDisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('../fonts/ClashDisplay-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('../fonts/ClashDisplay-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('../fonts/ClashDisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Geist Font Family */
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Boxed Font Family */
+@font-face {
+  font-family: 'Boxed';
+  src: url('../fonts/BoxedLight.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Boxed';
+  src: url('../fonts/BoxedRegular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Boxed';
+  src: url('../fonts/BoxedMedium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Boxed';
+  src: url('../fonts/BoxedSemibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Boxed';
+  src: url('../fonts/BoxedRegular-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+	font-family: 'Geist';
+	overflow-x: hidden;
+	background-color: black;
+  position: static !important;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Привязка футера к низу страницы */
+#page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#main {
+  flex: 1;
+}
+
+.container {
+    max-width: 1360px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.hero__sect {
+  height: calc(85dvh - 80px);
+  height: calc(var(--vh, 1vh) * 85 - 80px);
+}
+
+.hero__sect-img {
+  height: calc(var(--vh, 1vh) * 85);
+}
+
+.hero__sect-shop {
+  height: calc(var(--vh, 1vh) * 75 - 96px);
+}
+
+.hero__sect-shop {
+  height: calc(var(--vh, 1vh) * 75 - 89px) !important;
+}
+.hero__sect-shop-img {
+  height: calc(var(--vh, 1vh) * 75) !important;
+}
+
+@media (max-width: 767px) {
+  .hero__sect {
+    height: calc(var(--vh, 1vh) * 85 - 64px);
+  }
+
+  .hero__sect-img {
+    height: calc(var(--vh, 1vh) * 85) !important;
+  }
+}
+
+body.page-id-19 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Кастомная пагинация */
+.custom-pagination-wrapper {
+  z-index: 10;
+  bottom: 60px;
+}
+
+.text-hero {
+  margin-bottom: 100px;
+}
+
+.title-shop {
+  margin-bottom: 0;
+}
+
+@media (min-width: 767px) {
+  .title-shop {
+    margin-bottom: 10%;
+  }
+}
+
+@media (min-width: 1550px) {
+  .title-shop {
+    margin-bottom: 20%;
+  }
+
+  .custom-pagination-wrapper {
+    bottom:100px;
+  }
+  
+  .text-hero {
+    margin-bottom: 10%;
+  }
+}
+
+.pagination-lines {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.pagination-line {
+  width: 200px;
+  height: 2px;
+  background-color: #757575;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.pagination-line.active {
+  background-color: #EA0029;
+  height: 2px;
+}
+
+.pagination-labels {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.pagination-label {
+  display: block;
+  text-align: left;
+  width: 200px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.pagination-label.active {
+  color: white !important;
+}
+
+/* Скрываем стандартную пагинацию Swiper */
+.swiper-pagination {
+  display: none !important;
+}
+
+/* Дропдаун языков */
+.language-dropdown {
+  z-index: 1000;
+}
+
+.language-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Стили для GTranslate кодов языков */
+.language-list .gtranslate_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 6px;
+}
+
+.gtranslate_wrapper .glink {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none !important;
+  font-size: 14px;
+  color: #757575;
+  transition: color 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  
+}
+
+.language-list .glink:hover {
+  color: white;
+  border-bottom: 1px solid white;
+
+}
+
+.gtranslate_wrapper .gt-current-lang {
+  color: white !important;
+  border-bottom: 1px solid white;
+
+}
+
+/* Убираем нижний border-radius у контейнера хедера только когда дропдаун открыт */
+.header-container.dropdown-open {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  box-shadow: none;
+}
+
+/* Дропдаун меню при наведении на хедер */
+.header-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+}
+
+.header-dropdown:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Мобильное меню */
+.mobile-menu-overlay {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu-overlay:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-content {
+  max-width: 100%;
+}
+
+.mobile-menu-item {
+  transition: background-color 0.2s ease;
+}
+
+.mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+.mobile-menu-checkbox:checked + label + .mobile-submenu {
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+.mobile-menu-checkbox:checked + label .mobile-menu-arrow {
+  transform: rotate(90deg);
+}
+
+.mobile-menu-arrow {
+  transition: transform 0.3s ease;
+}
+
+/* Стили для языков в мобильном меню */
+.mobile-menu-languages-list {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.mobile-menu-languages-list .gtranslate_wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
+  gap: 5px;
+}
+
+.mobile-menu-languages-list .glink,
+.mobile-menu-languages-list .gt_language_code {
+  text-decoration: none !important;
+  transition: background-color 0.2s ease;
+  text-transform: none !important;
+  width: 100% !important;
+  background: none !important;
+  border: none !important;
+  padding-inline: 16px !important;
+  margin-inline: 20px !important;
+  text-align: start;
+  font-size: 18px;
+}
+
+.mobile-menu-languages-list .gt_language_code:nth-child(1) {
+  margin-top: 8px;
+}
+
+.mobile-menu-languages-list .gt_language_code:nth-child(4) {
+  margin-bottom: 8px;
+}
+
+/* TOPCon Technology Slider Styles */
+.topcon-slider-section {
+  position: relative;
+  min-height: 500px;
+}
+
+.topcon-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.topcon-swiper .swiper-slide {
+  width: 100%;
+  height: 500px;
+}
+
+.topcon-swiper .swiper-slide.dots {
+  width: 100%;
+  height: auto !important;
+}
+
+@media (max-width: 767px) {
+  
+  .topcon-swiper .swiper-slide {
+    height: 400px;
+  }
+
+  .topcon-swiper .swiper-slide.dots  {
+    height: auto !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .topcon-swiper .swiper-slide {
+    height: 600px;
+  }
+
+  .topcon-swiper .swiper-slide.dots  {
+    height: auto !important;
+  }
+}
+
+/* Кастомная пагинация для TOPCon слайдера */
+.topcon-pagination-wrapper {
+  z-index: 10;
+}
+
+/* Мобильная версия - Swiper слайдер */
+.topcon-pagination-mobile {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.topcon-pagination-swiper {
+  width: 100%;
+  overflow: visible;
+}
+
+.topcon-pagination-swiper .swiper-slide {
+  width: 75% !important; /* Один слайд занимает 75%, чтобы был виден следующий справа */
+  max-width: 100%;
+}
+
+.topcon-pagination-item-mobile {
+  width: 100%;
+  cursor: pointer;
+}
+
+.topcon-pagination-line-mobile {
+  width: 100%;
+  height: 2px;
+  background-color: #757575;
+  transition: all 0.3s ease;
+}
+
+.topcon-pagination-line-mobile.active {
+  background-color: #EA0029;
+  height: 3px;
+}
+
+.topcon-pagination-label-mobile {
+  display: block;
+  transition: color 0.3s ease;
+  color: #757575;
+}
+
+.topcon-pagination-label-mobile span {
+  color: inherit;
+}
+
+.topcon-pagination-label-mobile p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Десктопная версия - Статичная пагинация */
+.topcon-pagination-desktop {
+  width: 100%;
+}
+
+.topcon-pagination-lines-desktop {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.topcon-pagination-line-desktop {
+  height: 2px;
+  background-color: #757575;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  flex: 1;
+}
+
+.topcon-pagination-line-desktop.active {
+  background-color: #EA0029;
+  height: 2px;
+}
+
+.topcon-pagination-line-desktop:hover {
+  background-color: #9CA3AF;
+}
+
+.topcon-pagination-line-desktop.active:hover {
+  background-color: #EA0029;
+}
+
+.topcon-pagination-labels-desktop {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.topcon-pagination-item-desktop {
+  flex: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.topcon-pagination-label-desktop {
+  display: block;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color: #757575;
+}
+
+.topcon-pagination-label-desktop span {
+  color: inherit;
+}
+
+.topcon-pagination-label-desktop.active,
+.topcon-pagination-item-desktop.active .topcon-pagination-label-desktop {
+  color: white !important;
+}
+
+.topcon-pagination-label-desktop p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.topcon-pagination-item-desktop.active .topcon-pagination-label-desktop p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.topcon-pagination-label-desktop:hover,
+.topcon-pagination-item-desktop:hover .topcon-pagination-label-desktop {
+  color: #9CA3AF;
+}
+
+.topcon-pagination-item-desktop.active:hover .topcon-pagination-label-desktop {
+  color: white !important;
+}
+
+/* Скрываем стандартную пагинацию Swiper для TOPCon слайдера */
+.topcon-swiper .swiper-pagination {
+  display: none !important;
+}
+
+.shop-tab {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  color: #757575;
+}
+
+.shop-tab .tab-underline {
+  transition: background-color 0.3s ease;
+  background-color: #757575;
+}
+
+.shop-tab.active .tab-underline {
+  background-color: #EA0029 !important;
+}
+
+.shop-tab.active {
+  color: white !important;
+}
+
+
+
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(to right, #000 0%, #0a0a0a 70%, transparent 100%);
+  min-height: 426px;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .product-card {
+    min-height: 600px;
+  }
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(234, 0, 41, 0.3);
+}
+
+/* Products Swiper на главной странице */
+.products-swiper-home {
+  width: 100%;
+  overflow: visible;
+}
+
+.products-swiper-home .swiper-slide {
+  height: auto;
+}
+
+/* На мобильных устройствах убираем переполнение у секции */
+@media (max-width: 767px) {
+  .products-section {
+    overflow: hidden;
+  }
+}
+
+/* Exclusive Packaging Section */
+.exclusive-packaging-section {
+  position: relative;
+  background-color: #000;
+}
+
+.exclusive-packaging-section .container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Our Projects Section */
+.our-projects-section {
+  background-color: #000;
+}
+
+.project-card {
+  position: relative;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.project-card img {
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* References Swiper для мобильных */
+.projects-swiper-refs {
+  width: 100%;
+  overflow: visible;
+}
+
+.projects-swiper-refs .swiper-slide {
+  height: auto;
+}
+
+/* На мобильных устройствах убираем переполнение у секции референсов */
+@media (max-width: 1023px) {
+  .our-projects-section {
+    overflow: hidden;
+  }
+}
+
+.product-card-home {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(to right, #000 0%, #0a0a0a 70%, transparent 100%);
+  min-height: 426px;
+  position: relative;
+  height: 100%;
+}
+
+@media (min-width: 1024px) {
+  .product-card-home {
+    min-height: 600px;
+  }
+}
+
+.product-card-home:hover {
+  box-shadow: 0 15px 40px rgba(234, 0, 41, 0.3);
+}
+
+.learn-more-btn {
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.learn-more-btn:hover {
+  background-color: #EA0029 !important;
+  border-color: #EA0029 !important;
+}
+
+.hero__sect div img {
+  height: 100%;
+}
+
+.woocommerce img, .woocommerce-page img {
+  height: 100%;
+}
+
+.products-swiper-next.swiper-button-disabled,
+.products-swiper-prev.swiper-button-disabled {
+  color: #757575;
+}
+
+.products-swiper-next.swiper-button-disabled:hover,
+.products-swiper-prev.swiper-button-disabled:hover {
+  color: #757575;
+}
+
+/* References Archive Section */
+.references-archive-section {
+  background-color: #000;
+}
+
+/* Пагинация */
+.pagination {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination .page-numbers {
+  color: #757575;
+  padding: 8px 12px;
+  border: 1px solid #757575;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.pagination .page-numbers:hover,
+.pagination .page-numbers.current {
+  color: #EA0029;
+  border-color: #EA0029;
+  background-color: rgba(234, 0, 41, 0.1);
+}
+
+/* FAQ Section */
+.faq-section {
+  background-color: #000;
+}
+
+.faq-item {
+  transition: background-color 0.3s ease;
+}
+
+.faq-item:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.faq-question:focus {
+  outline: none;
+}
+
+.faq-arrow img {
+  opacity: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.faq-question:hover .faq-arrow img {
+  opacity: 0.6;
+}
+
+.faq-answer {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.faq-answer.hidden {
+  display: none;
+}
+
+/* Custom Checkbox Styles */
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  border: 1px solid #757575;
+  background-color: transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  margin-top: 2px;
+  transition: all 0.3s ease;
+}
+
+.custom-checkbox:hover {
+  border-color: #EA0029;
+  background-color: rgba(234, 0, 41, 0.1);
+}
+
+.custom-checkbox:checked {
+  background-color: #EA0029;
+  border-color: #EA0029;
+}
+
+.custom-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  animation: checkmark 0.2s ease;
+}
+
+.phantom-icon {
+  height: 27px !important;
+}
+
+@media (max-width: 767px) {
+  .phantom-icon {
+    height: 15px !important;
+  }
+}
+
+.custom-checkbox:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(234, 0, 41, 0.3);
+}
+
+@keyframes checkmark {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+.single-product-bg {
+  height: calc(100% + 96px);
+  top: -96px;
+}
+
+
+
+@media (max-width: 1023px) {
+  .single-product-bg {
+    height: calc(100% + 118px);
+    top: -118px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .horizontal-banner {
+    flex-wrap: wrap;
+    justify-content: center !important;
+    gap: 10px;
+  }
+}
+
+/* Стили для контента вакансий */
+.vacancy-content h2 {
+  @apply text-white text-[18px] md:text-[20px] font-medium uppercase mt-8 mb-4;
+}
+
+.vacancy-content h3 {
+  @apply text-white text-[16px] md:text-[18px] font-medium uppercase mt-6 mb-3;
+}
+
+.vacancy-content p {
+  @apply mb-4 text-[#757575];
+}
+
+.vacancy-content ul,
+.vacancy-content ol {
+  @apply list-disc list-inside space-y-2 ml-4 mb-4;
+}
+
+.vacancy-content li {
+  @apply text-[#757575];
+}
+
+.vacancy-content strong {
+  @apply text-white font-medium;
+}
+
+.vacancy-content a {
+  @apply text-[#EA0029] hover:underline transition-colors;
+}
+
+/* Стили для контента новостей */
+.news-content h2 {
+  @apply text-white text-[18px] md:text-[20px] font-medium uppercase mt-8 mb-4;
+}
+
+.news-content h3 {
+  @apply text-white text-[16px] md:text-[18px] font-medium uppercase mt-6 mb-3;
+}
+
+.news-content p {
+  @apply mb-4 text-[#757575];
+}
+
+.news-content ul,
+.news-content ol {
+  @apply list-disc list-inside space-y-2 ml-4 mb-4;
+}
+
+.news-content li {
+  @apply text-[#757575];
+}
+
+.news-content strong {
+  @apply text-white font-medium;
+}
+
+.news-content a {
+  @apply text-[#EA0029] hover:underline transition-colors;
+}
+
+.news-content img {
+  @apply w-full h-auto my-6;
+}
+
+/* Contact Form Styles */
+/* Custom Select Dropdown */
+.custom-select-wrapper {
+  position: relative;
+}
+
+.custom-select-button {
+  min-height: 40px;
+}
+
+.custom-select-button:focus {
+  border-color: #EA0029;
+}
+
+.custom-select-button[aria-expanded="true"] {
+  border-color: #EA0029;
+}
+
+.custom-select-button[aria-expanded="true"] .custom-select-arrow {
+  transform: rotate(180deg);
+}
+
+.custom-select-dropdown {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.custom-select-option.selected {
+  background-color: rgba(234, 0, 41, 0.2);
+  color: #EA0029;
+}
+
+.custom-select-option:hover {
+  background-color: #1B1B1B;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea,
+.contact-form select {
+  color: white;
+}
+
+.contact-form input[type="text"]::placeholder,
+.contact-form input[type="email"]::placeholder,
+.contact-form input[type="tel"]::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: #EA0029;
+}
+
+#contact-form-message {
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 16px;
+}
+
+#contact-form-message.success {
+  background-color: rgba(0, 255, 0, 0.1);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  color: #4ade80;
+}
+
+#contact-form-message.error {
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  color: #f87171;
+}
+
+/* Модальное окно поиска */
+.site-header {
+  overflow: visible;
+}
+
+.search-modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  min-height: 100px;
+  max-height: 100vh;
+  overflow: visible;
+}
+
+.search-modal:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-modal-content {
+  position: relative;
+  z-index: 10;
+  min-height: 100px;
+}
+
+.search-input {
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-bottom-color: #EA0029;
+}
+
+.search-close {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-results {
+  background-color: #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-results:not(.hidden) {
+  display: block;
+}
+
+.search-results-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.search-result-item {
+  background: linear-gradient(to right, #000 0%, #0a0a0a 70%, transparent 100%);
+  padding: 20px;
+  border-radius: 7px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.search-result-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(234, 0, 41, 0.3);
+}
+
+.search-result-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+
+.search-result-item h3 {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.search-result-item .price {
+  color: #EA0029;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.search-no-results {
+  color: #757575;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 18px;
+}
+
+.search-loading {
+  color: #757575;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 18px;
+}
+
+@media (max-width: 1023px) {
+  .search-modal-content {
+    padding: 0 20px;
+  }
+  
+  .search-modal-content > div {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  .search-input {
+    font-size: 20px;
+  }
+  
+  .search-results .container {
+    padding: 0 20px;
+  }
+  
+  .search-results-content {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+}
+

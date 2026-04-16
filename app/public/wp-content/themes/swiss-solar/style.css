@@ -1,0 +1,21 @@
+/*
+Theme Name: Swiss Solar
+Theme URI: https://swiss-solar.com
+Author: Swiss Solar Team
+Author URI: https://swiss-solar.com
+Description: Современная тема WordPress с Tailwind CSS для Swiss Solar. Чистый и минималистичный дизайн с полной поддержкой Tailwind CSS.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: swiss-solar
+Tags: tailwind, modern, responsive, clean, minimal
+*/
+
+/* 
+ * Основные стили загружаются через Tailwind CSS
+ * Этот файл необходим для распознавания темы WordPress
+ */
+

@@ -1,0 +1,38 @@
+# robots.txt — Swiss Solar / swissenergy-solar.ch (SSWISS GROUP AG)
+# Переместите в корень сайта (рядом с index.php)
+# Замените домен в Sitemap, если отличается от swissenergy-solar.ch
+
+User-agent: *
+
+# WordPress: админка и системные пути
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /wp-includes/
+Disallow: /wp-login.php
+Disallow: /wp-content/cache/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/upgrade/
+
+# Технические файлы и безопасность
+Disallow: /xmlrpc.php
+Disallow: /readme.html
+Disallow: /license.txt
+Disallow: /.well-known/
+
+# WooCommerce: служебные страницы без SEO-ценности
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /order-tracking/
+Disallow: /addons/
+
+# Результаты поиска (дубли контента)
+Disallow: /*?s=
+Disallow: /*?product_search=
+
+# Медиафайлы — разрешены для Google Images
+Allow: /wp-content/uploads/
+
+# Sitemap (WordPress 5.5+ встроенная карта)
+# Yoast: /sitemap_index.xml | RankMath: /sitemap_index.xml
+Sitemap: https://swissenergy-solar.ch/wp-sitemap.xml
